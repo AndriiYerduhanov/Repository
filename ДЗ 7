@@ -1,0 +1,17 @@
+def move_zeros_to_end(lst):
+    left = 0
+    right = len(lst) - 1
+    
+    while left < right:
+        if lst[left] == 0:
+            while lst[right] == 0 and right > left:
+                right -= 1
+            lst[left], lst[right] = lst[right], lst[left]
+        left += 1
+    
+    return lst
+
+print(move_zeros_to_end([0, 1, 0, 12, 3]))
+print(move_zeros_to_end([0]))
+print(move_zeros_to_end([1, 0, 13, 0, 0, 0, 5]))
+print(move_zeros_to_end([9, 0, 7, 31, 0, 45, 0, 45, 0, 45, 0, 0, 96, 0]))
