@@ -1,0 +1,16 @@
+import string
+
+def to_hashtag(s):
+    words = s.split()
+    words = [word.capitalize() for word in words]
+
+    hashtag = '#' + ''.join(words)
+
+    hashtag = ''.join(char for char in hashtag if char.isalnum())
+    hashtag = hashtag[:140]
+
+    return hashtag
+
+print(to_hashtag('Python Community'))             # #PythonCommunity
+print(to_hashtag('i like python community!'))     # #ILikePythonCommunity
+print(to_hashtag('Should, I. subscribe? Yes!'))   # #ShouldISubscribeYes
