@@ -1,0 +1,15 @@
+def divide_list(lst):
+    if len(lst) == 0:
+        return [[], []]
+    elif len(lst) % 2 == 0:
+        midpoint = len(lst) // 2
+        return [lst[:midpoint], lst[midpoint:]]
+    else:
+        midpoint = len(lst) // 2 + 1
+        return [lst[:midpoint], lst[midpoint:]]
+
+print(divide_list([1, 2, 3, 4, 5, 6]))  # [[1, 2, 3], [4, 5, 6]]
+print(divide_list([1, 2, 3]))           # [[1, 2], [3]]
+print(divide_list([1, 2, 3, 4, 5]))      # [[1, 2, 3], [4, 5]]
+print(divide_list([1]))                  # [[1], []]
+print(divide_list([]))                   # [[], []]
