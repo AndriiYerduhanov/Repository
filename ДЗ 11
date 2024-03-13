@@ -1,0 +1,27 @@
+def calculator():
+    while True:
+        num1 = float(input("Enter first number: "))
+
+        num2 = float(input("Enter second number: "))
+
+        action = input("Enter action (+, -, *, /): ")
+
+        if action == '+':
+            result = num1 + num2
+        elif action == '-':
+            result = num1 - num2
+        elif action == '*':
+            result = num1 * num2
+        elif action == '/':
+            result = num1 / num2
+        else:
+            print("Invalid action!")
+            continue
+
+        print("Your result is", result)
+
+        answer = input("Do you want to perform another calculation? (yes/no): ")
+        if answer.lower() != 'yes' and answer.lower() != 'y':
+            break
+
+calculator()
